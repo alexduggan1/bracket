@@ -233,7 +233,7 @@ fn main() {
             }
         }
         else {
-            println!("no bracket provided");
+            println!("Run bracket -h for help");
         }
     }
 }
@@ -597,15 +597,17 @@ fn display_bracket(bracket: Bracket) {
     }
     println!("           link\t{}", bracket.link);
     
-    let mut streams = bracket.streams.iter().peekable();
-    print!("        streams\t");
-    while let Some(stream) = streams.next()  {
-        if streams.peek().is_none() {
-            // last one
-            print!("{}\n", stream);
-        }
-        else {
-            print!("{}\n\t\t", stream);
+    if bracket.streams.len() != 0 {
+        let mut streams = bracket.streams.iter().peekable();
+        print!("        streams\t");
+        while let Some(stream) = streams.next()  {
+            if streams.peek().is_none() {
+                // last one
+                print!("{}\n", stream);
+            }
+            else {
+                print!("{}\n\t\t", stream);
+            }
         }
     }
     println!("");
