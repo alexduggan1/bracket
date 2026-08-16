@@ -550,8 +550,13 @@ fn display_brackets(brackets: Vec<Bracket>, command: Commands, current_day: Opti
             .filter(|a| a.days.clone().unwrap().contains(&current_day.unwrap()))
             .collect();
 
-            for bracket in filtered_brackets {
-                display_bracket(bracket);
+            if (filtered_brackets.len() != 0) {
+                for bracket in filtered_brackets {
+                    display_bracket(bracket);
+                }
+            }
+            else {
+                println!("no brackets on this day");
             }
         },
         _ => eprintln!("invalid display command"),
