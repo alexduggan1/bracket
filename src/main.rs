@@ -157,7 +157,7 @@ fn main() {
     if cli.command.is_some() {
         match &cli.command.unwrap() {
             Commands::Add(args) => {
-                println!("'add' was used, name is: {:?}", args.name);
+                //println!("'add' was used, name is: {:?}", args.name);
 
                 match add_bracket(args) {
                     Ok(_) => println!("added {:?}", args.name),
@@ -550,7 +550,7 @@ fn display_brackets(brackets: Vec<Bracket>, command: Commands, current_day: Opti
             .filter(|a| a.days.clone().unwrap().contains(&current_day.unwrap()))
             .collect();
 
-            if (filtered_brackets.len() != 0) {
+            if filtered_brackets.len() != 0 {
                 for bracket in filtered_brackets {
                     display_bracket(bracket);
                 }
