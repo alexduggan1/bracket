@@ -400,7 +400,7 @@ fn edit_bracket(args: EditArgs) -> std::io::Result<()> {
                 bracket.name = edit_rename_args.name;
             },
             EditCommands::ChangeLink(edit_change_link_args) => {
-                bracket.name = edit_change_link_args.link;
+                bracket.link = edit_change_link_args.link;
             },
             EditCommands::AddDays(edit_add_days_args) => {
                 if bracket.days.is_some() {
